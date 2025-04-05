@@ -97,7 +97,7 @@ export const AppHeader = () => {
       ref={headerRef}
       style={{ ...styles.headerRootCommon, ...additionalStyles }}
     >
-      <div style={styles.contentRoot}>
+      <div style={{ ...styles.contentRoot, ...globalStyles.headerOverlay }}>
         <section style={{ ...styles.contentSection, ...styles.logo }}>
           ShailAhir.com
         </section>

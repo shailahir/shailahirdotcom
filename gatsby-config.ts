@@ -30,6 +30,16 @@ const config: GatsbyConfig = {
         usePreconnect: true,
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`, // or wherever your images live
+      },
+    },
   ],
 };
 
