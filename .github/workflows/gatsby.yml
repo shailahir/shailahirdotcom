@@ -78,7 +78,7 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
-        run: npm run build
+        run: npm run build --prefix-paths
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
