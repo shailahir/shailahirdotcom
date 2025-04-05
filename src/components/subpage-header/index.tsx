@@ -31,6 +31,8 @@ const styles: Record<string, React.CSSProperties> = {
     backgroundRepeat: "no-repeat",
     zIndex: 0,
     opacity: 0.4,
+    // mixBlendMode: "lighten", // try screen, overlay, lighten, etc.
+    pointerEvents: "none",
   },
   textContainer: {
     position: "relative" as const,

@@ -7,8 +7,9 @@ const styles = {
   cardRoot: {
     border: "1px solid #d9d9d9",
     borderRadius: "8px",
-    // backgroundColor: "#fafafa",
-    background: "transparent",
+    backgroundColor: "#fafafa",
+    // background: "#fff",
+    opacity: 0.9,
   },
   internalContainer: {
     padding: "12px",

@@ -45,7 +45,8 @@ const styles: Record<string, React.CSSProperties> = {
     marginRight: "2rem",
   },
   sticky: {
-    backgroundColor: "white",
+    backgroundColor: "rgba(255,255,255,0.9)",
+    // opacity: 0.6,
     transition: "all 0.3s ease",
     boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
   },
@@ -89,8 +90,6 @@ export const AppHeader = () => {
   }, []);
 
   const additionalStyles = isSticky ? styles.sticky : {};
-
-  console.log("isSticky = ", isSticky);
 
   return (
     <header
