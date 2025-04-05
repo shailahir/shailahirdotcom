@@ -1,49 +1,42 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import * as React from "react";
+import { HeadFC, PageProps } from "gatsby";
+import { Layout } from "../components/layout";
+import { SubPageHeader } from "../components/subpage-header";
+import { PageLayout } from "../components/layout/page-layout";
+import { Footer } from "../components/footer";
 
 const pageStyles = {
   color: "#232129",
   padding: "96px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+};
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
+      <Layout>
+        <div>
+          <section>
+            <SubPageHeader pageTitle="404 Page Not Found" />
+          </section>
+        </div>
+
+        <PageLayout>
+          <div>
+            <p>
+              This page is not available at the moment, Please use top
+              navigation to home page
+            </p>
+          </div>
+          <div>
+            <Footer />
+          </div>
+        </PageLayout>
+      </Layout>
     </main>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head: HeadFC = () => <title>Not found</title>;
