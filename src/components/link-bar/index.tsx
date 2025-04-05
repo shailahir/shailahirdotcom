@@ -1,0 +1,74 @@
+import { Link } from "gatsby";
+import React from "react";
+
+const styles = {
+  //   headerRootCommon: {
+  //     backgroundColor: "transparent",
+  //   },
+  //   contentRoot: {
+  //     display: "flex",
+  //     paddingLeft: "36px",
+  //     paddingRight: "36px",
+  //     paddingTop: "36px",
+  //   },
+  contentSection: {
+    flex: 1,
+    display: "flex",
+  },
+  contentSectionLogin: {
+    display: "flex",
+    justifyContent: "flex-end",
+  },
+  contentSectionNav: {
+    flex: 1,
+    display: "flex",
+    justifyContent: "center",
+  },
+  list: {
+    display: "inline",
+  },
+  listItem: {
+    display: "inline",
+    marginRight: "2rem",
+  },
+  activeHeaderLink: {
+    textDecoration: "underline",
+  },
+  headerLink: {
+    textDecoration: "none",
+    color: "#000",
+  },
+};
+
+export type LinkBarLinkItem = {
+  path: string;
+  name: string;
+  activeMatch: string;
+};
+
+export type LinkBarProps = {
+  links: LinkBarLinkItem[];
+};
+
+export const LinkBar = ({ links }: LinkBarProps) => {
+  return (
+    <section style={{ ...styles.contentSection, ...styles.contentSectionNav }}>
+      <nav>
+        <ul style={styles.list}>
+          {links &&
+            links.map((mapLink) => (
+              <li style={{ ...styles.listItem }}>
+                <Link
+                  style={styles.headerLink}
+                  to={mapLink.path}
+                  activeStyle={styles.activeHeaderLink}
+                >
+                  {mapLink.name}
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </nav>
+    </section>
+  );
+};

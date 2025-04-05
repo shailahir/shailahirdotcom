@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import { LinkBar } from "../link-bar";
 
 const styles = {
   headerRootCommon: {
@@ -47,12 +48,12 @@ export const mainLinks = [
     activeMatch: "home",
   },
   {
-    path: "/projects",
+    path: "/projects/all",
     name: "Recent Works",
     activeMatch: "recent-works",
   },
   {
-    path: "/blogs",
+    path: "/blogs/all",
     name: "Blogs",
     activeMatch: "blogs",
   },
@@ -63,7 +64,8 @@ export const AppHeader = () => {
     <header style={styles.headerRootCommon}>
       <div style={styles.contentRoot}>
         <section style={styles.contentSection}>ShailAhir.com</section>
-        <section
+        <LinkBar links={mainLinks} />
+        {/* <section
           style={{ ...styles.contentSection, ...styles.contentSectionNav }}
         >
           <nav>
@@ -82,7 +84,7 @@ export const AppHeader = () => {
                 ))}
             </ul>
           </nav>
-        </section>
+        </section> */}
         <section
           style={{ ...styles.contentSection, ...styles.contentSectionLogin }}
         >
