@@ -86,27 +86,6 @@ const ProjectsPage: React.FC<PageProps> = () => {
       knowMoreLink: "4/mobile-web-application-for-so-and-so-project",
       id: "4",
     },
-    // {
-    //   title: "Mobile web application for so and so project",
-    //   summary: "Summary for this project is something something",
-    //   imageUri: "https://picsum.photos/600/200",
-    //   knowMoreLink: "5/mobile-web-application-for-so-and-so-project",
-    //   id: "5",
-    // },
-    // {
-    //   title: "Mobile web application for so and so project",
-    //   summary: "Summary for this project is something something",
-    //   imageUri: "https://picsum.photos/600/200",
-    //   knowMoreLink: "6/mobile-web-application-for-so-and-so-project",
-    //   id: "6",
-    // },
-    // {
-    //   title: "Mobile web application for so and so project",
-    //   summary: "Summary for this project is something something",
-    //   imageUri: "https://picsum.photos/600/200",
-    //   knowMoreLink: "7/mobile-web-application-for-so-and-so-project",
-    //   id: "7",
-    // },
   ];
 
   return (

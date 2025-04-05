@@ -31,82 +31,30 @@ const BlogPage: React.FC<PageProps> = () => {
       path: "../all",
     },
     {
-      name: "Websites",
-      activeMatch: "websites",
-      path: "../websites",
-    },
-    {
-      name: "Apps",
-      activeMatch: "apps",
-      path: "../apps",
-    },
-    {
-      name: "Framework",
-      activeMatch: "framework",
-      path: "../framework",
-    },
-    {
-      name: "Library",
-      activeMatch: "library",
-      path: "../library",
-    },
-    {
-      name: "Plugin",
-      activeMatch: "plugin",
-      path: "../plugin",
+      name: "Technology",
+      activeMatch: "technology",
+      path: "../technology",
     },
   ];
 
   const allProjects = [
     {
-      title: "Mobile web application for so and so project",
-      summary: "Summary for this project is something something",
+      title: "Typescript is now faster to build",
+      summary:
+        "With new compiler, microsoft claims typescript now builds 10 times faster",
       imageUri: "https://picsum.photos/600/200",
-      knowMoreLink: "1/mobile-web-application-for-so-and-so-project",
+      knowMoreLink: "1/typescript-is-now-faster-to-build",
       id: "1",
     },
     {
-      title: "Mobile web application for so and so project",
-      summary: "Summary for this project is something something",
+      title: "Industry movig towards non garbadge collecting languages",
+      summary:
+        "In performance critical applications, companies are now moving towards programming languages like go and rust",
       imageUri: "https://picsum.photos/600/200",
-      knowMoreLink: "2/mobile-web-application-for-so-and-so-project",
+      knowMoreLink:
+        "2/industry-moving-towards-non-garbadge-collection-languages",
       id: "2",
     },
-    {
-      title: "Mobile web application for so and so project",
-      summary: "Summary for this project is something something",
-      imageUri: "https://picsum.photos/600/200",
-      knowMoreLink: "3/mobile-web-application-for-so-and-so-project",
-      id: "3",
-    },
-    {
-      title: "Mobile web application for so and so project",
-      summary: "Summary for this project is something something",
-      imageUri: "https://picsum.photos/600/200",
-      knowMoreLink: "4/mobile-web-application-for-so-and-so-project",
-      id: "4",
-    },
-    // {
-    //   title: "Mobile web application for so and so project",
-    //   summary: "Summary for this project is something something",
-    //   imageUri: "https://picsum.photos/600/200",
-    //   knowMoreLink: "5/mobile-web-application-for-so-and-so-project",
-    //   id: "5",
-    // },
-    // {
-    //   title: "Mobile web application for so and so project",
-    //   summary: "Summary for this project is something something",
-    //   imageUri: "https://picsum.photos/600/200",
-    //   knowMoreLink: "6/mobile-web-application-for-so-and-so-project",
-    //   id: "6",
-    // },
-    // {
-    //   title: "Mobile web application for so and so project",
-    //   summary: "Summary for this project is something something",
-    //   imageUri: "https://picsum.photos/600/200",
-    //   knowMoreLink: "7/mobile-web-application-for-so-and-so-project",
-    //   id: "7",
-    // },
   ];
 
   return (
