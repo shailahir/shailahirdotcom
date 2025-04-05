@@ -1,16 +1,27 @@
 import { Link } from "gatsby";
-import React from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { LinkBar } from "../link-bar";
+import { globalStyles } from "../../styles/globalStyles";
 
-const styles = {
+const styles: Record<string, React.CSSProperties> = {
+  logo: {
+    fontSize: "24px",
+    fontWeight: 600,
+  },
   headerRootCommon: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    zIndex: 999,
+    width: "100%",
+    maxWidth: "100%",
     backgroundColor: "transparent",
+    transition: "all 0.3s ease",
   },
   contentRoot: {
     display: "flex",
-    paddingLeft: "36px",
-    paddingRight: "36px",
-    paddingTop: "36px",
+    padding: "16px 36px",
+    alignItems: "center",
   },
   contentSection: {
     flex: 1,
@@ -19,6 +30,7 @@ const styles = {
   contentSectionLogin: {
     display: "flex",
     justifyContent: "flex-end",
+    alignItems: "center",
   },
   contentSectionNav: {
     flex: 1,
@@ -32,12 +44,10 @@ const styles = {
     display: "inline",
     marginRight: "2rem",
   },
-  activeHeaderLink: {
-    textDecoration: "underline",
-  },
-  headerLink: {
-    textDecoration: "none",
-    color: "#000",
+  sticky: {
+    backgroundColor: "white",
+    transition: "all 0.3s ease",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
   },
 };
 
@@ -60,31 +70,38 @@ export const mainLinks = [
 ];
 
 export const AppHeader = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const headerRef = useRef(null);
+
+  const handleScroll = useCallback(() => {
+    if (headerRef.current) {
+      // @ts-expect-error("suppressed")
+      const height = headerRef.current?.getBoundingClientRect().height;
+      setIsSticky(window.scrollY > height);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, {
+      once: false,
+    });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const additionalStyles = isSticky ? styles.sticky : {};
+
+  console.log("isSticky = ", isSticky);
+
   return (
-    <header style={styles.headerRootCommon}>
+    <header
+      ref={headerRef}
+      style={{ ...styles.headerRootCommon, ...additionalStyles }}
+    >
       <div style={styles.contentRoot}>
-        <section style={styles.contentSection}>ShailAhir.com</section>
+        <section style={{ ...styles.contentSection, ...styles.logo }}>
+          ShailAhir.com
+        </section>
         <LinkBar links={mainLinks} />
-        {/* <section
-          style={{ ...styles.contentSection, ...styles.contentSectionNav }}
-        >
-          <nav>
-            <ul style={styles.list}>
-              {mainLinks &&
-                mainLinks.map((mapLink) => (
-                  <li style={{ ...styles.listItem }}>
-                    <Link
-                      style={styles.headerLink}
-                      to={mapLink.path}
-                      activeStyle={styles.activeHeaderLink}
-                    >
-                      {mapLink.name}
-                    </Link>
-                  </li>
-                ))}
-            </ul>
-          </nav>
-        </section> */}
         <section
           style={{ ...styles.contentSection, ...styles.contentSectionLogin }}
         >

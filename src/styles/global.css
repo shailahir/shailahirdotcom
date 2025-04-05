@@ -3,5 +3,29 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: "14px";
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+:root {
+  --color-primary: #01267c; /* example: blue */
+  --color-secondary: #6c757d; /* example: gray */
+  --color-accent: #ff4081; /* optional: highlight/accent */
+  --color-background: #f8f9fa; /* optional: page background */
+  --color-text: #212529; /* optional: base text color */
+  --color-header-link: #fff;
 }

@@ -6,15 +6,16 @@ export type SubPageHeaderProps = {
 
 const styles = {
   root: {
-    backgroundColor: "grey",
-    backgroundImage: "url(https://picsum.photos/1600/400)",
-    height: "400px",
+    backgroundColor: "#FEDF00",
+    height: "450px",
     display: "flex",
+    backgroundSize: "cover",
     justifyContent: "center",
     alignItems: "center",
     marginTop: "-90px",
   },
   text: {
+    paddingTop: "90px",
     fontSize: "72px",
   },
 };

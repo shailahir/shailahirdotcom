@@ -2,15 +2,6 @@ import { Link } from "gatsby";
 import React from "react";
 
 const styles = {
-  //   headerRootCommon: {
-  //     backgroundColor: "transparent",
-  //   },
-  //   contentRoot: {
-  //     display: "flex",
-  //     paddingLeft: "36px",
-  //     paddingRight: "36px",
-  //     paddingTop: "36px",
-  //   },
   contentSection: {
     flex: 1,
     display: "flex",
@@ -29,14 +20,18 @@ const styles = {
   },
   listItem: {
     display: "inline",
-    marginRight: "2rem",
+    marginRight: "1rem",
   },
   activeHeaderLink: {
-    textDecoration: "underline",
+    color: "var(--color-header-link)",
+    backgroundColor: "var(--color-primary)",
+    borderRadius: "6px",
   },
   headerLink: {
     textDecoration: "none",
     color: "#000",
+    lineHeight: "1.2",
+    padding: "6px 14px",
   },
 };
 
@@ -57,7 +52,7 @@ export const LinkBar = ({ links }: LinkBarProps) => {
         <ul style={styles.list}>
           {links &&
             links.map((mapLink) => (
-              <li style={{ ...styles.listItem }}>
+              <li key={mapLink.path} style={{ ...styles.listItem }}>
                 <Link
                   style={styles.headerLink}
                   to={mapLink.path}

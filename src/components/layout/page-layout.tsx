@@ -1,9 +1,11 @@
 import React, { PropsWithChildren } from "react";
 
-const styles = {
+const styles: Record<string, React.CSSProperties> = {
   container: {
     maxWidth: "1280px",
     margin: "0px auto",
+    // position: "relative",
+    overflow: "visible",
   },
 };
 

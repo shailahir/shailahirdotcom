@@ -118,4 +118,8 @@ const ProjectsPage: React.FC<PageProps> = () => {
 
 export default ProjectsPage;
 
-export const Head: HeadFC = () => <title>Recent Projects</title>;
+export const Head: HeadFC = () => (
+  <>
+    <title>Recent Projects</title>
+  </>
+);
