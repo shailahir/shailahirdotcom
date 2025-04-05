@@ -19,6 +19,11 @@ const styles = {
     display: "flex",
     justifyContent: "flex-end",
   },
+  contentSectionNav: {
+    flex: 1,
+    display: "flex",
+    justifyContent: "center",
+  },
   list: {
     display: "inline",
   },
@@ -58,7 +63,9 @@ export const AppHeader = () => {
     <header style={styles.headerRootCommon}>
       <div style={styles.contentRoot}>
         <section style={styles.contentSection}>ShailAhir.com</section>
-        <section style={{ ...styles.contentSection }}>
+        <section
+          style={{ ...styles.contentSection, ...styles.contentSectionNav }}
+        >
           <nav>
             <ul style={styles.list}>
               {mainLinks &&
@@ -79,7 +86,7 @@ export const AppHeader = () => {
         <section
           style={{ ...styles.contentSection, ...styles.contentSectionLogin }}
         >
-          <ul>
+          <ul style={styles.list}>
             <li style={styles.listItem}>Login</li>
             <li style={styles.listItem}>Theme</li>
           </ul>
